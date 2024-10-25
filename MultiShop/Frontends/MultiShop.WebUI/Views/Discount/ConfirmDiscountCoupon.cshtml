@@ -20,22 +20,22 @@
         <div class="border-bottom pb-2">
             <div class="d-flex justify-content-between mb-3">
                 <h6>Toplam Ürün Fiyatı</h6>
-                <h6>@ViewBag.total</h6>
+                <h6>@ViewBag.total ₺</h6>
             </div>
             <div class="d-flex justify-content-between mb-3">
                 <h6 class="font-weight-medium">%20 KDV</h6>
-                <h6 class="font-weight-medium">@ViewBag.taxPrice</h6>
+                <h6 class="font-weight-medium">@ViewBag.taxPrice ₺</h6>
             </div>
 
             @if (ViewBag.discountRateValue > 0)
             {
                 <div class="d-flex justify-content-between mb-3">
                     <h6 class="text-warning">% İndirim</h6>
-                    <h6 class="text-warning">%@ViewBag.discountRateValue</h6>
+                    <h6 class="text-warning">%@ViewBag.discountRateValue ₺</h6>
                 </div>
                 <div class="d-flex justify-content-between mb-3">
                     <h6 class="text-warning">₺ İndirim</h6>
-                    <h6 class="text-warning"> -@ViewBag.discountAmount</h6>
+                    <h6 class="text-warning"> -@ViewBag.discountAmount ₺</h6>
                 </div>
             }
         </div>
@@ -43,7 +43,7 @@
         <div class="pt-2">
             <div class="d-flex justify-content-between mt-2">
                 <h5>Toplam Tutar</h5>
-                <h5>@ViewBag.finalPriceAfterDiscount</h5>
+                <h5>@ViewBag.finalPriceAfterDiscount ₺</h5>
             </div>
             <button class="btn btn-block btn-primary font-weight-bold my-3 py-3">Ödemeye Geç</button>
         </div>

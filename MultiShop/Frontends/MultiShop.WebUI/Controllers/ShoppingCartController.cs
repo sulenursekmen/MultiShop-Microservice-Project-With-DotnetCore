@@ -31,7 +31,7 @@ namespace MultiShop.WebUI.Controllers
 
             if (values != null)
             {
-                ViewBag.total = values.TotalPrice.ToString("C2");
+                ViewBag.total = values.TotalPrice.ToString("N2");
             }
             else
             {
@@ -41,8 +41,8 @@ namespace MultiShop.WebUI.Controllers
             var taxPrice = values.TotalPrice / 100 * 20;
             var totalPriceWithTax = values.TotalPrice + taxPrice;
 
-            ViewBag.totalPriceWithTax = totalPriceWithTax.ToString("C2");
-            ViewBag.taxPrice = taxPrice.ToString("C2");
+            ViewBag.totalPriceWithTax = totalPriceWithTax.ToString("N2");
+            ViewBag.taxPrice = taxPrice.ToString("N2");
 
             // discount rate
             if (discountRateValue > 0)
@@ -50,13 +50,13 @@ namespace MultiShop.WebUI.Controllers
                 var discountAmount = totalPriceWithTax / 100 * discountRateValue;
                 var finalPriceAfterDiscount = totalPriceWithTax - discountAmount;
 
-                ViewBag.finalPriceAfterDiscount = finalPriceAfterDiscount.ToString("C2");
-                ViewBag.discountAmount = discountAmount.ToString("C2");
+                ViewBag.finalPriceAfterDiscount = finalPriceAfterDiscount.ToString("N2");
+                ViewBag.discountAmount = discountAmount.ToString("N2");
             }
             else
             {
                 // if there is no discount, the final price will be the same as the total price.
-                ViewBag.finalPriceAfterDiscount = totalPriceWithTax.ToString("C2");
+                ViewBag.finalPriceAfterDiscount = totalPriceWithTax.ToString("N2");
                 ViewBag.discountAmount = "0";
             }
 

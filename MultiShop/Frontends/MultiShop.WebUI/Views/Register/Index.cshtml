@@ -13,14 +13,19 @@
                         <div class="card-body p-5">
                             <h2 class="text-center mb-5">Kayıt Ol</h2>
                             <form method="post">
-                                <div class="form-outline mb-4">
-                                    <label class="form-label font-weight-bold">Adınız</label>
-                                    <input type="text" class="form-control form-control-lg" asp-for="Name" />
-                                </div>
-
-                                <div class="form-outline mb-4">
-                                    <label class="form-label font-weight-bold">Soyadınız</label>
-                                    <input type="text" class="form-control form-control-lg" asp-for="Surname" />
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label font-weight-bold">Adınız</label>
+                                            <input type="text" class="form-control form-control-lg" asp-for="Name" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label font-weight-bold">Soyadınız</label>
+                                            <input type="text" class="form-control form-control-lg" asp-for="Surname" />
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="form-outline mb-4">

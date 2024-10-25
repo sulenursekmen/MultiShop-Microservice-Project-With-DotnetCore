@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.Razor;
 using MultiShop.WebUI.Handlers;
+using MultiShop.WebUI.Middleware;
 using MultiShop.WebUI.Services.Concrete;
 using MultiShop.WebUI.Services.Interfaces;
 using MultiShop.WebUI.Settings;
@@ -23,6 +24,12 @@ builder.Services.AddLocalization(opt =>
 });
 
 builder.Services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Oturum zaman a??m?
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true; // Gerekli çerez
+});
 
 #endregion
 
@@ -74,7 +81,7 @@ var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Default/Error");
     app.UseHsts();
 }
 
@@ -87,6 +94,11 @@ app.UseAuthorization();
 var supportedCultures = new[] { "en", "fr", "de", "tr","it" };
 var localizationOptions=new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[3]).AddSupportedCultures(supportedCultures).AddSupportedUICultures(supportedCultures);
 app.UseRequestLocalization(localizationOptions);
+
+app.UseSession();
+
+app.UseMiddleware<AuthMiddleware>(); // Auth kontrolünü buraya ekliyoruz
+
 #endregion
 app.MapHub<SignalRHub>("/signalrhub");
 
@@ -94,7 +106,7 @@ app.MapHub<SignalRHub>("/signalrhub");
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Default}/{action=Index}/{id?}");
 
 app.UseEndpoints(endpoints =>
 {

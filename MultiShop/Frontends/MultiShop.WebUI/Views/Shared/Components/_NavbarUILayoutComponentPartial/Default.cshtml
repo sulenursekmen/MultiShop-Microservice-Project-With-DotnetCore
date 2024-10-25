@@ -1,11 +1,10 @@
-﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
-@model List<ResultCategoryDto>
+﻿@model List<ResultCategoryDto>
 
 <div class="container-fluid bg-light mb-30">
     <div class="row px-xl-5">
         <div class="col-lg-3 d-none d-lg-block">
             <a class="btn d-flex align-items-center justify-content-between  w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
-                <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>@localizer["Kategoriler"] </h6>
+                <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Kategoriler </h6>
                 <i class="fa fa-angle-down text-dark"></i>
             </a>
             <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 999;">
@@ -19,7 +18,7 @@
         </div>
         <div class="col-lg-9">
             <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-                <a href="" class="text-decoration-none d-block d-lg-none">
+                <a href="/Default/Index/" class="text-decoration-none d-block d-lg-none">
                     <span class="h1 text-uppercase text-dark bg-light px-2">Multi</span>
                     <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Shop</span>
                 </a>
@@ -28,37 +27,51 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">@localizer["Ana Sayfa"]</a>
-                        <a href="shop.html" class="nav-item nav-link">@localizer["Ürünler"]</a>
-                        <a href="detail.html" class="nav-item nav-link">Ürün Detayları</a>
+                        <a href="/Default/Index/" class="nav-item nav-link">Ana Sayfa</a>
+                        <a href="shop.html" class="nav-item nav-link">Ürünler</a>
                         <a href="detail.html" class="nav-item nav-link">Günün Fırsatı</a>
-                        <a href="/Contact/Index/" class="nav-item nav-link">@localizer["İletişim"]</a>
+                        <a href="/Contact/Index/" class="nav-item nav-link">İletişim</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                        <a href="" class="btn px-0">
-                            <i class="fas fa-heart "></i> @localizer["Favorilerim"]
-                            <span class="badge text-secondary border border-primary  rounded-circle" style="padding-bottom: 2px; background-color:darkred">0</span>
-                        </a>
-                        <a href="" class="btn px-0 ml-3">
-                            <i class="fas fa-shopping-cart"></i>@localizer["Sepetim"]
-                            <span class="badge text-secondary border border-primary  rounded-circle" style="padding-bottom: 2px; background-color:darkred">0</span>
-                        </a>
-
+                        @if (@ViewBag.IsLoggedIn == "true")
+                        {
+                            <a href="" class="btn px-0">
+                                <i class="fas fa-heart "></i> Favorilerim
+                                <span class="badge text-secondary border border-primary  rounded-circle" style="padding-bottom: 2px; background-color:darkred">0</span>
+                            </a>
+                            <a href="/ShoppingCart/Index" class="btn px-0 ml-3">
+                                <i class="fas fa-shopping-cart"></i> Sepetim
+                                <span class="badge text-secondary border border-primary  rounded-circle" style="padding-bottom: 2px; background-color:darkred">0</span>
+                            </a>
+                        }
+                        @if (@ViewBag.IsLoggedIn != "true")
+                        {
+                            <a href="/Login/Index" class="btn px-0 ml-3">
+                                Giriş Yap
+                            </a>
+                            <a href="/Register/Index" class="btn px-0 ml-3">
+                                Kayıt Ol
+                            </a>
+                        }
 
                     </div>
-                    <div class="nav-item dropdown text-dark">
-                        <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown">Hesabım <i class="fa fa-angle-down mt-1"></i></a>
-                        <div class="dropdown-menu  rounded-0 border-0 m-0">
-                            <a href="cart.html" class="dropdown-item">Tüm Siparişlerim</a>
-                            <a href="cart.html" class="dropdown-item">Ürün Yorumlarım</a>
-                            <a href="cart.html" class="dropdown-item">Kullanıcı Bilgilerim</a>
-                            <a href="cart.html" class="dropdown-item">Çıkış Yap</a>
-                         
+
+                    @if (@ViewBag.IsLoggedIn == "true")
+                    {
+                        // Kullanıcı giriş yaptıysa "Hesabım" menüsü gösteriliyor
+                        <div class="nav-item dropdown text-dark">
+                            <a href="#" class="nav-link dropdown-toggle text-dark" data-toggle="dropdown">Hesabım <i class="fa fa-angle-down mt-1"></i></a>
+                            <div class="dropdown-menu rounded-0 border-0 m-0">
+                                <a href="/User/MyOrder/MyOrderList" class="dropdown-item">Tüm Siparişlerim</a>
+                                <a href="/User/Info" class="dropdown-item">Kullanıcı Bilgilerim</a>
+                                <a href="/User/Message/Inbox" class="dropdown-item">Gelen Mesajlarım</a>
+                                <a href="/User/Message/Sendbox" class="dropdown-item">Giden Mesajlarım</a>
+                                <form asp-controller="Login" asp-action="Logout" method="post">
+                                    <button type="submit" class="dropdown-item">Çıkış Yap</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-
-
-
+                    }
                 </div>
             </nav>
         </div>

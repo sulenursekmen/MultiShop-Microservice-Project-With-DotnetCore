@@ -27,15 +27,23 @@ namespace MultiShop.WebUI.Controllers
 
             if (result == true)
             {
+                HttpContext.Session.SetString("IsLoggedIn", "true");
+
                 return RedirectToAction("Index", "Default");
             }
+
             return View(signInDto);
+        }
+
+        [HttpPost]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("IsLoggedIn"); // Giriş bilgilerini sil
+            return RedirectToAction("Index", "Default");
         }
 
         public async Task<IActionResult> SignIn(SignInDto signUpDto)
         {
-            signUpDto.Username = "sullens";
-            signUpDto.Password = "141215aA*";
             await _identityService.SignIn(signUpDto);
             return RedirectToAction("Index", "User");
         }
