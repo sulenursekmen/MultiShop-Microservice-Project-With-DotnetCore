@@ -68,20 +68,58 @@ git clone https://github.com/sulenursekmen/MultiShop-Microservice-Project-With-D
 
 ## Some UI Pages
 
-![Ekran görüntüsü 2024-10-25 093142](https://github.com/user-attachments/assets/ac88d75a-8274-4008-835a-583dc50fbf6a)
-![Ekran görüntüsü 2024-10-25 092734](https://github.com/user-attachments/assets/e9fe5498-fd4d-4dd1-a3e8-7b97cc04ba10)
-![Ekran görüntüsü 2024-10-25 092506](https://github.com/user-attachments/assets/065e3863-bf22-4725-b64c-60cc9ca85538)
-![Ekran görüntüsü 2024-10-25 091931](https://github.com/user-attachments/assets/5627ba56-a967-4652-8298-50460f8e5787)
-![Ekran görüntüsü 2024-10-25 091748](https://github.com/user-attachments/assets/f79eb2e9-fa23-46be-b5b3-5b3ded02718e)
-![Ekran görüntüsü 2024-10-25 091606](https://github.com/user-attachments/assets/3771ba32-a794-4e5a-8b94-33622d5d8cf5)
-![Ekran görüntüsü 2024-10-25 091451](https://github.com/user-attachments/assets/a532b9b2-3219-4292-8ba7-c0e8b8e1a259)
-![Ekran görüntüsü 2024-10-25 091232](https://github.com/user-attachments/assets/39913cb2-923e-454f-bbe2-cbe2629b42ca)
-![Ekran görüntüsü 2024-10-25 091016](https://github.com/user-attachments/assets/f18ebcce-b3e3-4b63-815c-070534bbdcf6)
-![Ekran görüntüsü 2024-10-25 090244](https://github.com/user-attachments/assets/c23886d4-8dd8-423c-8a93-f25c7bce3848)
-![Ekran görüntüsü 2024-10-25 090014](https://github.com/user-attachments/assets/6599da64-eb3d-4598-8f8f-48fe05f88b2f)
-![Ekran görüntüsü 2024-10-25 085633](https://github.com/user-attachments/assets/993dcc2b-936b-40b8-b72b-3249b12532cf)
-![Ekran görüntüsü 2024-10-25 085446](https://github.com/user-attachments/assets/e22ac0f6-6a4d-4267-9a71-9bc7b18ff65f)
-![Ekran görüntüsü 2024-10-25 084802](https://github.com/user-attachments/assets/8d781a11-fc85-43a3-8d9c-0a347c4ef2af)
+1) Home Page
+   
 ![Ekran görüntüsü 2024-10-25 083621](https://github.com/user-attachments/assets/69b5334c-1e7e-4b89-aa67-428d105f95e7)
 
+2) Login Page 
 
+![Ekran görüntüsü 2024-10-25 084802](https://github.com/user-attachments/assets/8d781a11-fc85-43a3-8d9c-0a347c4ef2af)
+
+3) Register Page
+
+![Ekran görüntüsü 2024-10-25 085446](https://github.com/user-attachments/assets/e22ac0f6-6a4d-4267-9a71-9bc7b18ff65f)
+
+4) Contact Page
+
+![Ekran görüntüsü 2024-10-25 085633](https://github.com/user-attachments/assets/993dcc2b-936b-40b8-b72b-3249b12532cf)
+
+5) Shopping Cart Page
+   
+ ![Ekran görüntüsü 2024-10-25 090014](https://github.com/user-attachments/assets/6599da64-eb3d-4598-8f8f-48fe05f88b2f)
+
+ 6) Feature Product Page
+
+![Ekran görüntüsü 2024-10-25 091016](https://github.com/user-attachments/assets/f18ebcce-b3e3-4b63-815c-070534bbdcf6)
+
+7) Brands and Discount Offers 
+
+![Ekran görüntüsü 2024-10-25 091232](https://github.com/user-attachments/assets/39913cb2-923e-454f-bbe2-cbe2629b42ca)
+
+8) Admin / Products 
+
+![Ekran görüntüsü 2024-10-25 091451](https://github.com/user-attachments/assets/a532b9b2-3219-4292-8ba7-c0e8b8e1a259)
+
+9) Admin / Statistics Page
+
+![Ekran görüntüsü 2024-10-25 091606](https://github.com/user-attachments/assets/3771ba32-a794-4e5a-8b94-33622d5d8cf5)
+
+10) Docker Containers
+
+![Ekran görüntüsü 2024-10-25 091748](https://github.com/user-attachments/assets/f79eb2e9-fa23-46be-b5b3-5b3ded02718e)
+
+11) User Profile 
+
+![Ekran görüntüsü 2024-10-25 091931](https://github.com/user-attachments/assets/5627ba56-a967-4652-8298-50460f8e5787)
+
+12) Admin / Inbox
+
+![Ekran görüntüsü 2024-10-25 092506](https://github.com/user-attachments/assets/065e3863-bf22-4725-b64c-60cc9ca85538)
+
+13) Responsive View Admin 
+
+![Ekran görüntüsü 2024-10-25 092734](https://github.com/user-attachments/assets/e9fe5498-fd4d-4dd1-a3e8-7b97cc04ba10)
+
+14) Responsive View Default 
+
+![Ekran görüntüsü 2024-10-25 093142](https://github.com/user-attachments/assets/ac88d75a-8274-4008-835a-583dc50fbf6a)
